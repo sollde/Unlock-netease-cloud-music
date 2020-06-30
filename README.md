@@ -125,6 +125,24 @@ Invoke-Expression -Command (Invoke-WebRequest -UseBasicParsing -Uri https://bit.
 
 macOS端的使用与以上Windows端第三种方法同理，依次打开系统偏好`设置`＞`网络`＞`高级`＞`代理`，然后填入**地址**：[https://wy.ydlrqx.com/proxy.pac](https://wy.ydlrqx.com/proxy.pac)
 
+若安装了SS，可编辑 ~/.ShadowsocksX-NG/gfwlist.js 将底部 **FindProxyForURL** 函数修改为
+
+```
+function FindProxyForURL(url, host) {
+  if (host == 'music.163.com' || host == 'interface.music.163.com' || host == 'interface3.music.163.com' || host == 'apm.music.163.com' || host == 'apm3.music.163.com' || host == '59.111.181.38' || host == '59.111.181.60' || host == '223.252.199.66' || host == '223.252.199.67' || host == '59.111.160.195' || host == '59.111.160.197' || host == '193.112.159.225' || host == '39.105.63.80' || host == '47.100.127.239' || host == '118.24.63.156' || host == '59.111.181.35' || host == '115.236.118.33' || host == '115.236.121.1' || host == '112.13.122.1' || host == '112.13.119.17' || host == '103.126.92.132') {
+    return 'PROXY 106.52.127.72:19951;'
+  }
+
+  if (defaultMatcher.matchesAny(url, host) instanceof BlockingFilter) {
+    return proxy;
+  }
+
+  return direct;
+}
+```
+
+ 之后同iOS方法安装  CA 证书
+
 # <span style="color:orangered;font-weight:bold;">Linux端</span>
 
 会用Linux的都不应该是小白，所以这里就不截图了，直接上文字描述
