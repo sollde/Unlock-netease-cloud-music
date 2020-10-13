@@ -3,11 +3,7 @@ RUN apk add --update nodejs npm --repository=http://dl-cdn.alpinelinux.org/alpin
 
 ENV NODE_ENV production
 
-WORKDIR /usr/src/app
-COPY package*.json ./
-RUN npm install --production
 COPY . .
+RUN npm install --production
 
-EXPOSE 8080 8081
-
-ENTRYPOINT ["node", "app.js"]
+CMD node app.js -p 8080 -f 59.111.181.38
