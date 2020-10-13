@@ -8,7 +8,4 @@ COPY package*.json ./
 RUN npm install --production
 COPY . .
 
-EXPOSE 8080 8081
-
-ENTRYPOINT ["node", "app.js"]
 CMD node app.js -p 8080 -f 59.111.181.38
