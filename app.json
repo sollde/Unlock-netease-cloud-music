@@ -1,0 +1,10 @@
+{
+    "name": "Unlock-netease-cloud-music",
+    "description": "Deploy Unlock-netease-cloud-music on Heroku.",
+    "keywords": ["Unlock-netease-cloud-music"],
+    "website": "https://github.com/sollde/Unlock-netease-cloud-music",
+    "repository": "https://github.com/sollde/Unlock-netease-cloud-music",
+    "stack": "container",
+    "env": {
+    }
+}
